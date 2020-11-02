@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+
+        <% if session[:user_id] %>
+          <%@user=User.find_by(id:session[:user_id]) %>
+          <img class="login_image"  src="<%="/user_images/#{@user.image_name}"%>">
+      <% end %>
+
+      <div class="header-logo">
+        <%=link_to("ReviwPost","/") %>
+      </div>
+      <ul class="header-menus">
+        <% if session[:user_id] %>
+
+          <li>
+            <%=link_to("商品一覧","/product/index")%>
+          </li>
+          <li>
+            <%= link_to("ユーザー一覧","/account/index") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト","/logout",{method: :post}) %>
+          </li>
+        <% else %>
+          <li>
+            <%=link_to("ReviwPostとは","/about") %>
+          </li>
+          <li>
+            <%=link_to("商品一覧","/product/index")%>
+          </li>
+          <li>
+            <%= link_to("ユーザー一覧","/account/index") %>
+          </li>
+          <li>
+            <%= link_to("新規登録","/signup") %>
+          </li>
+          <li>
+            <%= link_to("ログイン" ,"/login") %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>

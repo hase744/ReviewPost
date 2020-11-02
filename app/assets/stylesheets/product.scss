@@ -1,0 +1,97 @@
+.portfolio{
+    float:left;
+    position:absolute;
+    left:100px;
+    top:100px;
+}
+
+.each-product{
+    display:inline-block;
+    background:white ;
+    margin-left:20px;
+    margin-bottom:30px;
+}
+
+.product_home_image{
+    height:200px;
+    width:250px;
+}
+
+.product_title{
+    text-align: center;
+}
+
+/* product/show ================================ */
+
+.product_explenation{
+    padding-top: 100px;
+    padding-left: 10px;
+    background-color:white;
+    overflow: hidden;
+}
+
+.image{
+    background-color:white;
+    height:200px;
+    width:250px;
+    display:inline-block;
+}
+
+.sample_image{
+    display:inline-block;
+    height:200px;
+    width:250px;
+}
+
+.product_name{
+    position:absolute;
+    padding-top:10px;
+    padding-left:10px;
+    display:inline-block;
+    color:black;
+    background-color: white;
+}
+
+/* product/post ================================ */
+.post_content{
+    color:red;
+}
+
+.all_comments{
+    border-radius:10px;
+    padding-top:0px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+img.sample{
+    width:300px;
+    height:250px;
+}
+
+.each_comment{
+    
+    text-align: left;
+    overflow: hidden;
+    background:white;
+    margin-top:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    border-bottom: 0.5px solid gray;
+}
+
+.comment{
+    float:left;
+}
+
+/* product/show ================================ */
+.input_product_detail{
+    padding-top:100px;
+}
+
+.comment-edit{
+    float: right;
+    display:block;
+    color:red;
+}

@@ -1,0 +1,60 @@
+<div class="input_product_detail">    
+</div>        
+<%= form_tag("/product/#{@product.id}/amend",{multipart:true}) do%>
+    <div class="for">
+      <div class="form-bod">
+      <div>商品名</div>
+        <input value="<%=@product.name%>" name="name">
+      </div>
+      
+      <div>メーカー</div>
+      <div class="form-bod">
+       <select name="manufacturer">
+            <option value="panasonic">パナソニック</option>
+            <option value="hitachi">日立</option>
+            <option value="toshiba">東芝</option>
+            <option value="sharp">シャープ</option>
+            <option value="mitsubishi">三菱</option>
+        </select>
+      </div>
+      <div>カテゴリー</div>
+      <div class="form-bod">
+        <select name="item">
+            <option value="rice-cooker">炊飯器</option>
+            <option value="vacuum">掃除機</option>
+            <option value="laundry">洗濯機</option>
+            <option value="air-conditioner">エアコン</option>
+            <option value="refrigerator">冷蔵庫</option>
+        </select>　
+      </div>
+      <div>価格</div>
+      <div class="form-bod">
+          <input value="<%=@product.price%>" name="price">
+      </div>
+      <div>高さ</div>
+      <div class="form-bod">
+          <input value="<%=@product.height%>" name="height">
+      </div>
+      <div>幅</div>
+      <div class="form-bod">
+          <input value="<%=@product.width%>" name="width">
+      </div>
+      <div>奥行き</div>
+      <div class="form-bod">
+          <input value="<%=@product.depth%>" name="depth">
+      </div>
+      <div>機能</div>
+      <div class="form-bod">
+          <textarea name="function"><%=@product.function%></textarea>
+      </div>
+      <div>画像</div>
+      <div>
+          <input name="image" type="file" >
+      </div>
+      
+      
+    </div>
+    <input class="post_product" type="submit" value="決定"">
+<%end%>
+        
+        <%=link_to("削除", "/posts/#{@product.id}/destroy",{method:"post"}) %>

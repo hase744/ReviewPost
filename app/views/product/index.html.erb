@@ -1,0 +1,19 @@
+<div class="portfolio">
+    
+    <% @products.each do |product| %>
+        <div class="each-product">
+            
+        
+            <a class="product_home_name" href="<%="/product/"+product.id.to_s%>">
+            <img class="product_home_image" src="<%="/product_images/#{product.image_name}"%>">
+            <div class="product_title">
+            <%=product.name%>
+            </div>
+            </a>
+        
+        <div>
+            <div><%=product.manufacturer%></div>
+        </div>
+        </div>
+    <%end%>
+</div>

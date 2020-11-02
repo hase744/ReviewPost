@@ -1,0 +1,56 @@
+<div class="user_inroduction">
+  <div class="user_name">
+     <h1><%=@user.name%></h1>
+  </div>
+  <div class = "user_info">
+      <div class="user_image_flame">
+        <img class="user_image"  src="<%="/user_images/#{@user.image_name}"%>">
+      </div>
+    <div class="user_profile">
+      <div>プロフィール</div>
+      <div>職業：<%=@user.occupation%></div>
+      <div>年齢：<%=@user.age%></div>
+      <div>性別：<%=@user.gender%></div>
+      <div>自己紹介</div>
+      <div><%=@user.introduction%></div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <% if @user.id == session[:user_id] %>
+  <li>
+    <%if session[:user_id] %>
+      <div>
+        <% if session[:user_id] == @user.id %>
+        <%=link_to("編集","/account/#{@user.id}/edit")%>
+        <% end %>
+      </div>
+    <%end %>
+  </li>
+  <% end %>
+</div>
+<% @posts.each do |post| %>
+    <div class="each_comment">
+        <div class="product">
+            <% @user_product = Product.find_by(name: post.product)%>
+            <%=link_to(post.product, "/product/#{@user_product.id}") %>
+        </div>
+        <div class="comment">
+            <%=post.content%>
+        </div>
+        <div class="comment-edit">
+          <%if session[:user_id] %>
+            <div>
+              <% if session[:user_id] == @user.id %>
+              <%=link_to("削除", "/posts/#{post.id}/#{@id}/destroy",{method:"post"}) %>
+              <% end %>
+            </div>
+          <%end %>
+        </div>
+    </div>
+<%end%>
+
+<div>
+  <a class="direct_message" ><%#=DM %></a>
+</div>

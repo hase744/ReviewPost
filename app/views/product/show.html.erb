@@ -1,0 +1,57 @@
+<div class="product_explenation">
+    <div class="image">
+        <img class="sample_image" src="<%="/sample"%><%=@id%><%=".png"%>">
+    </div>
+    <div class="product_name">
+        <h1><%=@product.name%></h1>
+        <ul>
+            <li>高さ<%=@product.height%>mm</li>
+            <li>幅<%=@product.width%>mm</li>
+            <li>奥行き<%=@product.depth%>mm<li>
+            <li>メーカー<%=@product.manufacturer%><li>
+            <li>機能<%=@product.function%><li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <%= form_tag("/posts/#{@id}/create") do%>
+        <div class="for">
+          <div class="form-bod">
+            <textarea name="content"></textarea>
+            <input class="post_conten" type="submit" value="投稿">
+          </div>
+        </div>
+    <%end%>
+</div>
+
+<div class="all_comments">
+<div>商品レビュー</div>
+<% @posts.each do |post| %>
+    <div class="each_comment">
+        <div class="product">
+          <%@user = User.find_by(name: post.user)%>
+          <% if post.user %>
+            <%=link_to(post.user,"/account/#{@user.id}/individual") %>
+            <% #=@user.id%>
+          <% else %>
+            <%="匿名さん" %>
+          <%end%>
+
+        </div>
+        <div class="comment">
+            <%=post.content%>
+
+        </div>
+        <div class="comment-edit">
+            <div>
+              <% if post.user %>
+                <% if @user.id == session[:user_id]%>
+                  <%=link_to("削除", "/posts/#{post.id}/#{@id}/destroy",{method:"post"}) %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+    </div>
+<%end%>
+<div>

@@ -1,0 +1,110 @@
+<div class="input_product_detail">
+    <%= form_tag("/product/create") do%>
+        <div class="for">
+          <div class="form-bod">
+          <div>商品名</div>
+            <input name="name">
+          </div>
+          
+          <div>メーカー</div>
+          <div class="form-bod">
+           <select name="manufacturer">
+                <option value="panasonic">パナソニック</option>
+                <option value="hitachi">日立</option>
+                <option value="toshiba">東芝</option>
+                <option value="sharp">シャープ</option>
+                <option value="mitsubishi">三菱</option>
+            </select>
+          </div>
+          <div>カテゴリー</div>
+          <div class="form-bod">
+            <select name="item">
+                <option value="rice-cooker">炊飯器</option>
+                <option value="vacuum">掃除機</option>
+                <option value="laundry">洗濯機</option>
+                <option value="air-conditioner">エアコン</option>
+                <option value="refrigerator">冷蔵庫</option>
+            </select>　
+          </div>
+          <div>価格</div>
+          <div class="form-bod">
+              <input name="price">
+          </div>
+          <div>高さ</div>
+          <div class="form-bod">
+              <input name="height">
+          </div>
+          <div>幅</div>
+          <div class="form-bod">
+              <input name="width">
+          </div>
+          <div>奥行き</div>
+          <div class="form-bod">
+              <input name="depth">
+          </div>
+          <div>機能</div>
+          <div class="form-bod">
+              <textarea name="function"></textarea>
+          </div>
+          
+          
+        </div>
+        <input class="post_product" type="submit" value="投稿">
+    <%end%>
+    <%= form_tag("/product/create") do%>
+        <div class="for">
+          <div class="form-bod">
+          <div>商品名</div>
+            <input name="name">
+          </div>
+          
+          <div>メーカー</div>
+          <div class="form-bod">
+            <input name="manufacturer">
+          </div>
+          <div>カテゴリー</div>
+          <div class="form-bod">
+            <input name="item">
+          </div>
+          <div>価格</div>
+          <div class="form-bod">
+              <input name="price">
+          </div>
+          <div>高さ</div>
+          <div class="form-bod">
+              <input name="height">
+          </div>
+          <div>幅</div>
+          <div class="form-bod">
+              <input name="width">
+          </div>
+          <div>奥行き</div>
+          <div class="form-bod">
+              <input name="depth">
+          </div>
+          <div>機能</div>
+          <div class="form-bod">
+              <textarea name="function"></textarea>
+          </div>
+          
+          
+        </div>
+        <input class="post_product" type="submit" value="投稿">
+    <%end%>
+
+    <%#%>
+    <% @products.each do |product| %>
+        <a class="product_home_name" href="<%="/product/"+product.id.to_s+"/edit"%>"><%=product.name%></a>
+        <div><%=product.name%></div>
+        <div><%=product.item%></div>
+        <div><%=product.manufacturer%></div>
+        <div><%=product.price%></div>
+        <div><%=product.height%></div>
+        <div><%=product.width%></div>
+        <div><%=product.depth%></div>
+        <div><%=product.function%></div>
+    <%end%>
+    
+    <div class="each-product" href="/product/1">
+    </div>
+</div>

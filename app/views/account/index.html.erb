@@ -1,0 +1,14 @@
+<div class="all-account">
+<% @users.each do |user| %>
+    <div class="each_account">
+      <a href="<%="/account/"+user.id.to_s+"/individual"%>">
+        <div class="each_user_image_flame">
+            <img class="each_user_image"  src="<%="/user_images/#{user.image_name}"%>">
+        </div>
+        <div class="each_user-name">
+            <%=user.name%>
+        </div>
+      </a>
+    </div>
+<%end%>
+</div>

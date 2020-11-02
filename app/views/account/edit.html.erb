@@ -1,0 +1,24 @@
+<div class="user_edit">
+  <%= form_tag("/account/#{@user.id}/update",{multipart:true}) do %>
+    <p>ユーザー名</p>
+      <input name ="name" value="<%=@user.name%>">
+    <p>メールアドレス</p>
+      <input name ="email" value="<%=@user.email%>">
+    <p>画像</p>
+      <input name="image" type="file">
+    <p>職業</p>
+      <input name ="occupation" value="<%=@user.occupation%>">
+    <p>年齢</p>
+      <input name ="age" value="<%=@user.age%>">
+    <p>性別</p>
+      <input name ="gender" value="<%=@user.gender%>">
+    <p>自己紹介</p>
+      <textarea name ="introduction" value="<%=@user.introduction%>"><%=@user.introduction%></textarea>
+    <div>
+      <input type="submit" value="保存">
+    </div>
+  <%end%>
+  <%= form_tag("/account/#{@user.id}/delete") do %>
+    <input type="submit" value="削除">
+  <% end %>
+</div>
