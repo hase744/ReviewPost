@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root  'account#index'  #この1行を追加
+  #root  'account#index'  #この1行を追加
   get "login" => "account#login_form"
   post "login" => "account#login"
   post "logout" => "account#logout"
