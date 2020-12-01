@@ -8,18 +8,11 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', '~> 1.4'
 #↓新しく記述したやつ
-#gem 'sqlite3', groups: %w(test development), require: false
-#gem 'pg', groups: %w(production), require: false
-# Use Puma as the app server
-group :development, :test do
-  gem 'sqlite3'
-end
-
 group :production do
   gem 'pg', '0.20.0'
 end
-#gem 'sqlite3', '~> 1.3.6'
-#↑04:49
+gem 'sqlite3', '~> 1.3.6'
+↑04:49
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
