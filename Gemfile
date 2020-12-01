@@ -12,7 +12,7 @@ group :production do
   gem 'pg', '0.20.0'
 end
 gem 'sqlite3', '~> 1.3.6'
-↑04:49
+#↑04:49
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
